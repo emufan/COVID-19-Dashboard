@@ -35,13 +35,13 @@ const imageBackground = false;
 const forceImageUpdate = false;
 
 // Show also the incidence for Germany in total
-var showGermanyValue = false;
+var showGermanyValue = true;
 
 // Show also the R-Value (only if showGermanyValue == true)
 var showRValue = true;
 
 // Toggle showing of vaccination status
-var showVaccination = true;
+var showVaccination = false;
 
 // Toggle showing of ICU beds
 var showIcu = true;
@@ -53,7 +53,7 @@ var showDaily = true;
 var useFrozen = false;
 
 // number of days to show in detail
-var detail = 5;
+var detail = 8;
 
 // show values for the state
 var showBl = true;
@@ -65,7 +65,8 @@ var theme = "original";
 const incidenceColors = {
   original: [{
       lower: 0,
-      color: new Color('#b1a7a6', 1),
+      color: new Color('#999999', 1)
+//    color: new Color('#b1a7a6', 1)
       highlight: new Color("#FFFFFF", .7)
     },
     {
