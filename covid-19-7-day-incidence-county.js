@@ -69,8 +69,8 @@ var theme = "original";
 const incidenceColors = {
   original: [{
       lower: 0,
-//    color: new Color('#b1a7a6', 1)
-      color: new Color('#999999', 1)
+//    color: new Color('#b1a7a6', 1),
+      color: new Color('#999999', 1),
       highlight: new Color("#FFFFFF", .7)
     },
     {
@@ -966,7 +966,7 @@ async function createWidget(items) {
     hour: 'numeric',
     minute: 'numeric'
 //  }).format(updated) + " // Version: " + version);
-  }).format(updated);
+  }).format(updated));
   statusText.font = Font.lightSystemFont(8);
   statusText.textColor = Color.gray();
   if (!showVaccination) {
