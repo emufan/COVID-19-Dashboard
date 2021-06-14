@@ -41,7 +41,9 @@ var showGermanyValue = true;
 var showRValue = true;
 
 // Toggle showing of vaccination status
+// var showVaccination = true;
 var showVaccination = false;
+
 
 // Toggle showing of ICU beds
 var showIcu = true;
@@ -53,6 +55,7 @@ var showDaily = true;
 var useFrozen = false;
 
 // number of days to show in detail
+// var detail = 5;
 var detail = 8;
 
 // show values for the state
@@ -65,8 +68,8 @@ var theme = "original";
 const incidenceColors = {
   original: [{
       lower: 0,
-      color: new Color('#999999', 1)
 //    color: new Color('#b1a7a6', 1)
+      color: new Color('#999999', 1)
       highlight: new Color("#FFFFFF", .7)
     },
     {
@@ -147,21 +150,34 @@ const vaccinationBoosterColor = new Color('#004156', 1);
 // Gradients
 let vaccinationGradient = new LinearGradient();
 vaccinationGradient.locations = [0, 0.2, 0.8, 1];
+// vaccinationGradient.colors = [
+//   new Color('#8C8C8C', 1),
+//   new Color('#535353', 1),
+//   new Color('#535353', 1),
+//   new Color('#8C8C8C', 1)
+// 
+// ];
 vaccinationGradient.colors = [
-  new Color('#8C8C8C', 1),
-  new Color('#535353', 1),
-  new Color('#535353', 1),
-  new Color('#8C8C8C', 1)
+  new Color('#444444', 1),
+  new Color('#444444', 1),
+  new Color('#444444', 1),
+  new Color('#444444', 1)
 
 ];
 
 let backgroundGradient = new LinearGradient();
 backgroundGradient.locations = [0, 0.2, 0.8, 1];
+// backgroundGradient.colors = [
+//   new Color("#28416F"),
+//   new Color("#141E30"),
+//   new Color("#141E30"),
+//   new Color("#28416F")
+// ];
 backgroundGradient.colors = [
-  new Color("#28416F"),
-  new Color("#141E30"),
-  new Color("#141E30"),
-  new Color("#28416F")
+  new Color("#000000"),
+  new Color("#000000"),
+  new Color("#000000"),
+  new Color("#000000")
 ];
 //------------------------------------------------------------------------------
 
@@ -177,7 +193,8 @@ var bedsWidth = graphWidth;
 const bedsLineWidth = 12;
 const tickWidth = 4;
 const vaccinationWidth = 65;
-const smallSpace = 12;
+// const smallSpace = 12;
+const smallSpace = 12.4;
 const gap = 3;
 var spaceBetweenDays = smallSpace * 5;
 var vertLineWeight = spaceBetweenDays - gap;
