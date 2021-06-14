@@ -35,6 +35,7 @@ const imageBackground = false;
 const forceImageUpdate = false;
 
 // Show also the incidence for Germany in total
+// var showGermanyValue = false;
 var showGermanyValue = true;
 
 // Show also the R-Value (only if showGermanyValue == true)
@@ -760,9 +761,11 @@ async function createWidget(items) {
       rect = new Rect(x0, y, barWidth, barHeight * dailyDelta);
       drawRoundedRect(graphDrawContext, rect, highlight, 2);
       if (i >= history.length - detail) {
-        y -= 21;
+//        y -= 21;
+        y -= 25;
         rect = new Rect(x0, y, barWidth, 20);
-        drawTextR(graphDrawContext, "+" + dailyValues[i + 1].abs, rect, highlight, Font.mediumSystemFont(18));
+//        drawTextR(graphDrawContext, "+" + dailyValues[i + 1].abs, rect, highlight, Font.mediumSystemFont(18));
+        drawTextR(graphDrawContext, "+" + dailyValues[i + 1].abs, rect, highlight, Font.mediumSystemFont(20));
       }
     }
 
@@ -897,7 +900,8 @@ async function createWidget(items) {
     let bedsLineRect = new Rect(0, bedsHeight / 2 - bedsLineWidth / 2, bedsWidth, bedsLineWidth);
     drawRoundedRect(drawContext, bedsLineRect, bedsLineColor, 2)
 
-    let bedsRect = new Rect(0, bedsHeight / 2 - 40, bedsWidth - freeBedsWidth - 10, 26);
+//    let bedsRect = new Rect(0, bedsHeight / 2 - 40, bedsWidth - freeBedsWidth - 10, 26);
+    let bedsRect = new Rect(0, bedsHeight / 2 - 35, bedsWidth - freeBedsWidth - 10, 26);
     drawContext.setFont(Font.mediumSystemFont(22));
     drawContext.setTextColor(Color.white());
     drawContext.drawTextInRect('🛏' + 'Intensivbetten'.toUpperCase() + ': ' + beds, bedsRect)
@@ -961,7 +965,8 @@ async function createWidget(items) {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric'
-  }).format(updated) + " // Version: " + version);
+//  }).format(updated) + " // Version: " + version);
+  }).format(updated);
   statusText.font = Font.lightSystemFont(8);
   statusText.textColor = Color.gray();
   if (!showVaccination) {
